@@ -1,0 +1,27 @@
+<p>edit-recordmgmt works!</p>
+<div>
+  <h3>Edit Record Management</h3>
+  <hr />
+</div>
+
+<div>
+  <form [formGroup]="editRecordmgmtForm" (ngSubmit)="onEditRecordmgmt()">
+    <div class="mb-3">
+      <label>DOI</label>
+      <input type="text" class="form-control" formControlName="doi" />
+    </div>
+    <div class="mb-3">
+      <label>Title</label>
+      <textarea class="form-control" formControlName="title"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Journal Title</label>
+      <textarea class="form-control" formControlName="journalTitle"></textarea>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Update Record</button>
+    </div>
+  </form>
+</div>

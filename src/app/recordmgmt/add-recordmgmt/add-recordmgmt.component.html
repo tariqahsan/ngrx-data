@@ -1,0 +1,21 @@
+<div>
+  <h3>Add Record Management</h3>
+  <hr />
+</div>
+
+<div>
+  <form [formGroup]="addRecordmgmtForm" (ngSubmit)="onAddRecordmgmt()">
+    <div class="mb-3">
+      <label>DOI</label>
+      <input type="text" class="form-control" formControlName="doi" />
+    </div>
+    <div class="mb-3">
+      <label>Title</label>
+      <textarea class="form-control" formControlName="title"></textarea>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary">Add Record</button>
+    </div>
+  </form>
+</div>

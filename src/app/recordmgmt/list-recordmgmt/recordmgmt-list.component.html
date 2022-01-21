@@ -1,0 +1,33 @@
+<div>
+  <h3>Record Management List</h3>
+  <hr />
+</div>
+
+<div>
+  <a [routerLink]="['/recordmgmts', 'add']">Add Record Management</a>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>DOE ID</th>
+      <th>DOI</th>
+      <th>Title</th>
+	  <th>Journal Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let recordmgmt of recordmgmts$ | async">
+      <td>{{ recordmgmt.doeId }}</td>
+      <td>{{ recordmgmt.doi }}</td>
+      <td>{{ recordmgmt.title }}</td>
+      <td>{{ recordmgmt.journalTitle }}</td>
+      <td>
+        <a [routerLink]="['/recordmgmt', 'edit', recordmgmt.doeId]">Edit Record</a>&nbsp;
+        <a href="" (click)="onDeleteRecordmgmt($event, recordmgmt.doeId)">Delete Record</a>&nbsp;
+        <a [routerLink]="['/recordmgmt', 'details', recordmgmt.doeId]">View Details</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
